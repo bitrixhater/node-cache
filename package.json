@@ -1,0 +1,30 @@
+{
+  "name": "bitrixhater-node-cache",
+  "version": "1.0.0",
+  "description": "Simpliest node cache manager, used in my own projects",
+  "main": "lib/CacheManager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitrixhater/node-cache-manager.git"
+  },
+  "keywords": [
+    "node",
+    "cache",
+    "manager",
+    "nodejs",
+    "mongo",
+    "mongodb",
+    "mongoose",
+    "odb",
+    "ram"
+  ],
+  "author": "bitrixhater",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitrixhater/node-cache-manager/issues"
+  },
+  "homepage": "https://github.com/bitrixhater/node-cache-manager#readme"
+}
