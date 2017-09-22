@@ -1,5 +1,7 @@
 # node-cache
+
 A little cache manager, used in my own projects
+_I did not test it yet, but I think it works_
 
 
 # Usage
@@ -41,7 +43,7 @@ const cacheManager = new (require('./node-cache')).MongoDBCacheManager({
 
 | Key         | Type     | Default               |
 | ----------- | -------- | --------------------- |
-| cacheTime   | int      | 0 - infinity          |
+| cacheTime   | int      | 0 - infinity, sec     |
 | modelName   | string   | 'MongoDBCacheManager' |
 | uri         | string   | undefined             |
 
@@ -81,9 +83,9 @@ cacheManager.set('testKey', ['testValue'])
   })
 )
 
-ramCacheManager.set('testKey', ['testValue'], 0.01)
+cacheManager.set('testKey', ['testValue'], 0.01)
 setTimeout(() => {
-  ramCacheManager.get('testKey')
+  cacheManager.get('testKey')
   .then(testValue => {
     testResults[2] = (testValue[0] === 'testValue' && (testValue.length === 1))
   })
@@ -92,9 +94,9 @@ setTimeout(() => {
   })
 }, 5)
 
-ramCacheManager.set('testKey', ['testValue'], 0.005)
+cacheManager.set('testKey', ['testValue'], 0.005)
 setTimeout(() => {
-  ramCacheManager.get('testKey')
+  cacheManager.get('testKey')
   .then(testValue => {
     testResults[3] = (!testValue)
   })
@@ -113,7 +115,15 @@ $ npm test
 ```
 
 
+# Todos
+
+1. Trash cleaner
+2. Other types of database, include redis, memcached..
+3. Test it
+
+
 # Contributions
+
 PRs and issues are open. But just use only 2 spaces, not tabs for PRs
 
 
