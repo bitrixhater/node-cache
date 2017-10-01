@@ -1,6 +1,6 @@
 {
   "name": "bitrixhater-node-cache",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Simpliest node cache manager, used in my own projects",
   "main": "lib/CacheManager.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitrixhater/node-cache-manager.git"
+    "url": "git+https://github.com/bitrixhater/node-cache.git"
   },
   "keywords": [
     "node",
@@ -25,9 +25,9 @@
   "author": "bitrixhater",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bitrixhater/node-cache-manager/issues"
+    "url": "https://github.com/bitrixhater/node-cache/issues"
   },
-  "homepage": "https://github.com/bitrixhater/node-cache-manager#readme",
+  "homepage": "https://github.com/bitrixhater/node-cache#readme",
   "devDependencies": {
     "mocha": "latest"
   }

@@ -35,26 +35,26 @@ MongoDB cache manager (require connected `mongoose` (or pass `uri` option to con
 const cacheManager = new (require('./node-cache')).MongoDBCacheManager({
   cacheTime: 15,
   modelName: 'MongoDBCacheManager',
-  uri: false
+  uri: 'mongodb://127.0.0.1/MongoDBCacheManager' 
 })
 ```
 
 ## Options list
 
-| Key         | Type     | Default               |
-| ----------- | -------- | --------------------- |
-| cacheTime   | int      | 0 - infinity, sec     |
-| modelName   | string   | 'MongoDBCacheManager' |
-| uri         | string   | undefined             |
+| Key         | Type     | Default                                   |
+| ----------- | -------- | ------------------------------------------|
+| cacheTime   | int      | 0 - infinity, sec                         |
+| modelName   | string   | 'MongoDBCacheManager'                     |
+| uri         | string   | 'mongodb://127.0.0.1/MongoDBCacheManager' |
 
 ## Methods
 
-| Method | Arguments                                    |
-| ------ | -------------------------------------------- |
-| set    | key = string, data = object, cacheTime = int |
-| get    | key = string                                 |
-| remove | key = string                                 |
-| clear  | flush cache storage                          |
+| Method | Arguments                                    | Description                                               |
+| ------ | -------------------------------------------- | --------------------------------------------------------- |
+| set    | key = string, data = object, cacheTime = int | Save variable into the memory, cacheTime == 0 is infinity |
+| get    | key = string                                 | Get variable from the memory                              |
+| remove | key = string                                 | Remove variable from the memory                           |
+| clear  |                                              | Flush storage                                             |
 
 ## Code example
 
@@ -64,8 +64,10 @@ You can find examples in the `./test/test.js` file. But if you dont like read a 
 /**
  * Just require it and pass the options. That's it.
  *
- * If lib detect mongoose and if mongoose has been connected to db, you will be use MongoDBCacheManager, otherwise - RAMCacheManager. 
- * If you dont have active mongodb connection and you want to connect, just pass uri option
+ * If lib detect mongoose and if mongoose has been connected to db,
+ * you will be use MongoDBCacheManager, otherwise - RAMCacheManager. 
+ * If you dont have active mongodb connection and you want to connect,
+ * just pass uri option
  */
 const cacheManager = require('bitrixhater-node-cache')({
   cacheTime: 0
